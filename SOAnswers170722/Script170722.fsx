@@ -36,3 +36,8 @@ let fib = [for i in 1..10 -> {X=1.;Y=2.}]
 fib |> printfn "%A"
 
 fib |> Seq.length
+
+fib |> List.iter (fun x -> printfn "%A" x)
+fib |> List.iter (fun x -> printfn "%A" (x.X,x.Y))
+
+fib |> List.iter (printfn "%A")
