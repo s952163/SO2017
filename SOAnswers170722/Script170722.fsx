@@ -18,6 +18,11 @@ jsonout
 jsonout2
 
 
+type TestMe ()=
+    override __.ToString() = null
 
+TestMe()
 
+printfn "%A" (TestMe())
 
+printfn "%A" ()
