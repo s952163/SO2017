@@ -26,3 +26,13 @@ TestMe()
 printfn "%A" (TestMe())
 
 printfn "%A" ()
+
+type Point =
+    { X: float
+      Y: float }
+
+let fib = [for i in 1..10 -> {X=1.;Y=2.}]
+
+fib |> printfn "%A"
+
+fib |> Seq.length
