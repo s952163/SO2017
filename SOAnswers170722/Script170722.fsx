@@ -41,3 +41,29 @@ fib |> List.iter (fun x -> printfn "%A" x)
 fib |> List.iter (fun x -> printfn "%A" (x.X,x.Y))
 
 fib |> List.iter (printfn "%A")
+
+//// SQL:
+type Column = string
+type Table = string
+
+type QueryAggregate =
+  | MaxBy of Column
+
+type Query = 
+  { Table : Table
+    Aggregate : QueryAggregate }
+
+let q1 = { Table = "table1"; Aggregate = MaxBy "Datadate" }
+let q2 = { Table = "table2"; Aggregate = MaxBy "Datadate" }
+
+let translateAgg = function
+  | MaxBy col -> sprintf "MAX(%s)" col
+
+let translateQuery q =
+  sprintf "SELECT %s FROM %s" (translateAgg q.Aggregate) q.Table
+
+translateQuery q1
+translateQuery q2
+
+(translateAgg q1.Aggregate)
+q1.Table
