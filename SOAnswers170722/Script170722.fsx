@@ -67,3 +67,9 @@ translateQuery q2
 
 (translateAgg q1.Aggregate)
 q1.Table
+
+let bytes = [| 104uy; 101uy; 108uy; 108uy; 111uy |]
+
+bytes 
+|> Array.pairwise
+|> Array.findIndex (fun x -> fst x = snd x)
