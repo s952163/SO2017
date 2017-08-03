@@ -80,3 +80,21 @@ type DU =
 
 type Wihdissd =
     | Tags
+
+__SOURCE_DIRECTORY__
+
+#r @"..\packages\FSharp.Data\lib\net40\FSharp.Data.dll"
+open FSharp.Data
+open System
+open System.IO
+[<Literal>]
+let JsonSource = __SOURCE_DIRECTORY__ + @"\test.json"
+
+type JSonType = JsonProvider<JsonSource>
+
+let json1 = JSonType.GetSamples()
+
+let anotherPath = @"C:\tmp"
+let anotherJson = anotherPath + @"\test.json"
+let json2 = JSonType.Load(anotherJson)
+

@@ -3,3 +3,4 @@ framework: >= net46
 nuget FAKE
 nuget FSharp.Core
 nuget Newtonsoft.Json
+nuget FSharp.Data

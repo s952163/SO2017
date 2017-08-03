@@ -1,0 +1,3 @@
+[{"collectible":true,"health":4,"artist":"Zoltan Boros","type":"MINION","cost":1,"attack":2},
+{"collectible":true,"health":8,"artist":"James Ryman","type":"MINION","cost":8,"attack":8},
+{"collectible":true,"health":3,"artist":"Warren Mahy", "type":"LAND","cost":2,"attack":2}]
