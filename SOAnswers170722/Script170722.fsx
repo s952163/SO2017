@@ -98,3 +98,5 @@ let anotherPath = @"C:\tmp"
 let anotherJson = anotherPath + @"\test.json"
 let json2 = JSonType.Load(anotherJson)
 
+__SOURCE_FILE__
+
