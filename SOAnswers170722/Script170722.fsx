@@ -100,3 +100,17 @@ let json2 = JSonType.Load(anotherJson)
 
 __SOURCE_FILE__
 
+
+let [<Literal>] x1 = __SOURCE_DIRECTORY__ + @"\test.json"
+let [<Literal>] x2 = "x2"
+
+let x3 = 
+  let newFunc x =
+    match x with
+    | 1 -> x1
+    | 2 -> x2
+  newFunc 
+
+let x4 = x3 1
+  
+type NewJson3 =  JsonProvider<x4>
