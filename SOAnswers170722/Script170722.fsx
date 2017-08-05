@@ -1,5 +1,6 @@
 #r @"..\packages\Newtonsoft.Json\lib\net45\Newtonsoft.Json.dll"
-
+#nowarn "25"
+#warnaserror "25"
 open Newtonsoft.Json
 
 type MyDU = 
