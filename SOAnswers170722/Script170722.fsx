@@ -115,3 +115,17 @@ let x3 =
 let x4 = x3 1
   
 type NewJson3 =  JsonProvider<x4>
+
+//SO170811
+
+type NonZeroInteger = private NonZeroInteger of int 
+let createNZI i = 
+  if i = 0 then
+    Error "NonZeroInteger can't be Zero"
+  else 
+    Ok (NonZeroInteger i)
+
+createNZI 10
+createNZI 0
+
+
