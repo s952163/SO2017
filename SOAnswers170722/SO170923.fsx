@@ -17,3 +17,15 @@ decList
 |> R.plot
 
 R.plot(floatList,floatList)
+
+
+let xs = [1;2;3;4;2]
+xs |> List.countBy (fun x -> x = 2)
+xs  |> List.filter (fun x -> x = 2 ) |> List.length
+let xsa = xs |> List.toArray
+let xsi = xs |> List.toSeq
+
+(0,xs) ||> List.fold (fun acc elem -> match elem with 
+                                        | 2 -> acc + 1
+                                        | _ -> acc)
+                        
