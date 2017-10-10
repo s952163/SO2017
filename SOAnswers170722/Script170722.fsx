@@ -114,3 +114,16 @@ let x3 =
 let x4 = x3 1
   
 type NewJson3 =  JsonProvider<x4>
+
+
+let xx2 = (Some(Some(Some(3))))
+
+xx2 |> Option.bind id
+
+open System
+open System.IO
+let reverseLines f =
+  File.ReadAllLines f
+  |> Seq.rev
+
+reverseLines @"C:\Barra\Barrasys\barra4.prm"
