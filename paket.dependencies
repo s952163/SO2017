@@ -4,3 +4,4 @@ nuget FAKE
 nuget FSharp.Core
 nuget Newtonsoft.Json
 nuget FSharp.Data
+nuget RProvider

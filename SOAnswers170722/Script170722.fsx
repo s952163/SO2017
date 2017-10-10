@@ -1,5 +1,6 @@
 #r @"..\packages\Newtonsoft.Json\lib\net45\Newtonsoft.Json.dll"
-
+#nowarn "25"
+#warnaserror "25"
 open Newtonsoft.Json
 
 type MyDU = 
@@ -115,15 +116,16 @@ let x4 = x3 1
   
 type NewJson3 =  JsonProvider<x4>
 
+//SO170811
 
-let xx2 = (Some(Some(Some(3))))
+type NonZeroInteger = private NonZeroInteger of int 
+let createNZI i = 
+  if i = 0 then
+    Error "NonZeroInteger can't be Zero"
+  else 
+    Ok (NonZeroInteger i)
 
-xx2 |> Option.bind id
+createNZI 10
+createNZI 0
 
-open System
-open System.IO
-let reverseLines f =
-  File.ReadAllLines f
-  |> Seq.rev
 
-reverseLines @"C:\Barra\Barrasys\barra4.prm"
