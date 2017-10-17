@@ -14,6 +14,7 @@ lists.[1].Length
     for j in [0 .. (lists.[i].Length - 1)] do 
     yield lists.[j].[i]
 |] 
+
 |> Array.splitInto (lists.Length - 1)
 |> Array.map (fun x -> String.concat "," x)
 
