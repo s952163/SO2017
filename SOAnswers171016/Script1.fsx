@@ -37,11 +37,9 @@ transpose lists
 lists
 |> List.map (List.tail >> List.head)
 
-lists |> List.fold (fun x ->  )
 
 [1;2;3;4] |> List.fold (fun a b -> a + b) 0 
 
 lists |> List.fold (fun i j ->  j :: [List.head i] ) [[]]
 
-lists 
-|> List.mapFold (fun i j -> j :: [List.head i]) [[]]
+
