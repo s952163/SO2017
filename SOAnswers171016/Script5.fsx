@@ -27,7 +27,3 @@ let json4 =
     match json3 with
     [|(_,x)|] -> x
 
-let jsonSample = jsonType1.GetSample()
-
-for row in jsonSample do
-    printfn "%A" row
