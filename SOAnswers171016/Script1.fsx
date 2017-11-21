@@ -43,3 +43,6 @@ lists
 lists |> List.fold (fun i j ->  j :: [List.head i] ) [[]]
 
 
+let lst=[1;2;3;4]
+
+List.allPairs lst
