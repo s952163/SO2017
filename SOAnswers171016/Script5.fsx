@@ -1,8 +1,22 @@
+let x = [1;2;3]
+let y = ["a";"b";"c"]
+
+let z = ["d";"e";"f"]
+
+type MyRec = {
+    Time:int
+    Steps:string
+    Ma:string
+}
+
+let tupOfSeq = (x;y;z)
+
+Seq.map3 (fun x y z -> {Time=x;Steps=y;Ma=z}) x y z
+
+(x,y,z) |||> Seq.map3  (fun x y z -> {Time=x;Steps=y;Ma=z}) 
+
+
 #r @"../packages/FSharp.Data/lib/net40/FSharp.Data.dll"
-open FSharp.Data
-open FSharp.Data
-open FSharp.Data
-open FSharp.Data
 
 open FSharp.Data
 open FSharp.Data.JsonExtensions
