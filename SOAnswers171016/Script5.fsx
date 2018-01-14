@@ -95,3 +95,9 @@ let extractInnerJson (x: (string * JsonValue) []) =
 let json4 = 
     json3
     |> extractInnerJson
+
+typedefof<System.Void> = typedefof<unit>
+typedefof<unit> = typedefof<unit>
+typedefof<unit>
+
+typedefof<System.Void>
