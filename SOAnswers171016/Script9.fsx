@@ -2,16 +2,13 @@ type EmployeeName =
     { First  : string
       Last   : string }
 
-type EmployeeID =
-    | EmployeeID of int
-
 type MatcherInput =
     | Name of EmployeeName
-    | ID of EmployeeID
+    | EmployeeID of int
 
-type MatcherOutput = 
+type MatcherOutput<'a> = 
+    | Other of 'a
     | Info of string
-    | ID of EmployeeID
 
 let james = Name {First = "James"; Last = "Winklenaught"}
 let ted = Name {First = "Theodore"; Last = "Chesterton"}
@@ -25,10 +22,10 @@ let LookupEmployee (input: MatcherInput) =
         Map.ofList [(EmployeeID 1,Info "CEO");(EmployeeID 2,Info "CFO")]
 
     match input with 
-    | Name n -> MatcherOutput.ID numberLookup.[Name n]
-    | MatcherInput.ID x ->  (infoLookup.[x])
+    | Name _ -> Other (numberLookup.[input])
+    | EmployeeID _ ->  infoLookup.[input]
 
-let x = MatcherInput.ID (EmployeeID 1)
+let x = EmployeeID 1
 
 LookupEmployee ted
 LookupEmployee x
