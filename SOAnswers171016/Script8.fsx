@@ -1,5 +1,6 @@
 open System
 open System.IO
+open System.Web.Configuration
 
 let fileReplace (filename : string) (needle : string) (replace : string) : unit = 
         //use  file = IO.File.OpenText filename
@@ -18,3 +19,11 @@ let needle = "line" // given string already appearing in the text
 let replace = "row" // Whatever string that needs to be replaced
 
 fileReplace filename needle replace
+
+
+///
+type TesTRec = {
+    Name: string
+    Id: int option
+    Codes: int[] option
+}
