@@ -14,3 +14,11 @@ let checkDir dir =
 
 checkDir okdir
 checkDir baddir
+
+
+let mySum x y = x + y
+
+let mySum2 = (+)
+
+mySum 4 7
+mySum2 4 7
