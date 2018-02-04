@@ -35,3 +35,24 @@ let funcWithUnit x =
     x + 3
 
 funcWithUnit 3
+open System
+
+type Row = {
+    Id: bigint
+    Name: string
+    Address: string
+}
+
+let table = [
+    {Id = 100I; Name = "Joe"; Address = "NYC"}
+    {Id = 101I; Name = "Jane"; Address = "KC"}
+    {Id = 102I; Name = "Jim"; Address = "LA"}
+]
+
+let notInNYC = 
+    query {
+        for user in table do
+            where (user.Address <> "NYC")
+            select user.Name
+    }   
+    |> Seq.toList
