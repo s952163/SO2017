@@ -1,6 +1,5 @@
 open System
-open System.Web.UI.WebControls
-open System.Xml.XPath
+
 
 type DBRow1 = {
     id: string
