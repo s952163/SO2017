@@ -1,5 +1,6 @@
 open System
 open System.Collections.Generic
+open System.Collections
 
 
 type DBRow1 = {
@@ -63,3 +64,16 @@ let dataFactory (x: DBRows) =
 dataFactory (DBRow1 row1)
 dataFactory (DBRow2 row2)
 
+open System
+let str = "Test this string"
+
+str :?> List<char>
+
+str.ToCharArray()
+
+let str2 = [for a in str -> a]
+
+let rec split2 (str:char list) =
+    match str with
+    | x::xs -> if x <> ' ' then x else []
+    | ' ' ->
