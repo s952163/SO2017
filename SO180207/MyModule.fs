@@ -7,4 +7,4 @@ type Action =
     override x.ToString() = sprintf "%A" (x,x)
 let x = Add 5
 printfn "%A" x
-printfn "%A" (x.ToString()) |> ignore
+(x.ToString()) |> ignore
