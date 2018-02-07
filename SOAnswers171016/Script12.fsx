@@ -73,7 +73,12 @@ str.ToCharArray()
 
 let str2 = [for a in str -> a]
 
-let rec split2 (str:char list) =
-    match str with
-    | x::xs -> if x <> ' ' then x else []
-    | ' ' ->
+module internal MyModule.Types
+
+type Action =
+    | Add of int
+    | Update of int * string
+    | Delete of string
+
+let x = Add 5
+printfn "%A" x
