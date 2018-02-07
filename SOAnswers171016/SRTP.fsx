@@ -65,3 +65,15 @@ showAddressSimple x2
 type DUAddress =
     | MyRec1 of MyRec1
     | MyRec2 of MyRec2
+
+type TestDU =
+    | Blah of string
+    | Foo of int
+    member __.Adddress = "Hello"
+
+let b1 = Blah "oops"
+
+let b2 = Foo 10
+
+b1.Adddress
+b2.Adddress
