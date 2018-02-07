@@ -61,3 +61,7 @@ let showAddressSimple (x: IGetAddress<'a>) = x.ShowAddress
 
 showAddressSimple x1
 showAddressSimple x2
+
+type DUAddress =
+    | MyRec1 of MyRec1
+    | MyRec2 of MyRec2
