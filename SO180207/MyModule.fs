@@ -4,7 +4,3 @@ type Action =
     | Add of int
     | Update of int * string
     | Delete of string
-    override x.ToString() = sprintf "%A" (x,x)
-let x = Add 5
-printfn "%A" x
-(x.ToString()) |> ignore

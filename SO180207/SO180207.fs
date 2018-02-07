@@ -1,4 +1,4 @@
-module MyModule.Program
+module internal MyModule.Print
 open MyModule.Types
 
 
@@ -8,5 +8,8 @@ let main argv =
     // printfn "%A" x
     // printfn "%A" MyModule.Types.x 
     // printfn "%A" argv
-    MyModule.Types.x.ToString()
+    let printStuff (x:Action) =
+        printfn "%A" x
+    printStuff x
+    printStuff (Types.Add 10)
     0 // return an integer exit code
