@@ -65,6 +65,25 @@ showAddressSimple x2
 type DUAddress =
     | MyRec1 of MyRec1
     | MyRec2 of MyRec2
+    static member ShowAddRess(x) =
+        match x with 
+        | MyRec1 x -> x.Address
+        | MyRec2 x -> x.Address
+
+DUAddress.ShowAddRess(MyRec1 rec1)
+DUAddress.ShowAddRess(MyRec2 rec2)
+
+type DUAddress2 =
+    | MyRec1 of MyRec1
+    | MyRec2 of MyRec2
+    member x.ShowAddRess() =
+        match x with 
+        | MyRec1 x -> x.Address
+        | MyRec2 x -> x.Address
+
+(MyRec1 rec1).ShowAddRess()
+(MyRec2 rec2).ShowAddRess()
+
 
 type TestDU =
     | Blah of string
@@ -77,3 +96,5 @@ let b2 = Foo 10
 
 b1.Adddress
 b2.Adddress
+
+
