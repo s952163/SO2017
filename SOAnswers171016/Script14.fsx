@@ -20,3 +20,8 @@ x 10 20
 (fun f -> f >> scanMethod)
 let y = scanMethod >> someFn
 scanMethod (someFn 10 20)
+
+5 + 5
+5 +. 5
+
+1.0 (+.) 5.0
