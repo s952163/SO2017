@@ -10,8 +10,8 @@ type MyRec = {
 }
 
 let tupOfSeq = (x;y;z)
-
-Seq.map3 (fun x y z -> {Time=x;Steps=y;Ma=z}) x y z
+x
+let x = Seq.map3 (fun x y z -> {Time=x;Steps=y;Ma=z}) x y z
 
 (x,y,z) |||> Seq.map3  (fun x y z -> {Time=x;Steps=y;Ma=z}) 
 
