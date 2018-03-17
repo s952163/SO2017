@@ -32,3 +32,5 @@ type Person2 = {
 
 let p1 = { entityName =  Nullable(10); entityType = "John"}
 let p2 = { entityName =  System.Nullable(); entityType = null}
+
+let x = Some("bah")
