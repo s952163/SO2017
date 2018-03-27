@@ -17,3 +17,9 @@ isNull y
 
 Option.ofObj y
 Option.ofObj x
+
+let z = Some null
+Option.ofObj null
+match z with
+| Some x -> printfn "%A" x
+| None -> printfn "%A" "oops"
