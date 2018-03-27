@@ -9,3 +9,11 @@ listOfLists
 listOfLists
 |> List.map (fun x -> x.[1])
 
+let x = "test"
+let (y: string) = null
+
+isNull x
+isNull y
+
+Option.ofObj y
+Option.ofObj x
