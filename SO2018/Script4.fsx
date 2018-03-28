@@ -60,5 +60,20 @@ printer carPrinter car
 printer truckPrinter truck
 
 type Wheels =
- | Truck
- | Car
+ | Truck of Truck
+ | Car of Car
+
+let testPrinter x = 
+    match x with 
+    | Truck x -> "we've got a truck"
+    | Car x -> "what's this"
+
+let (|Car|_|) (x:Car) = 
+    Some(printer carPrinter x)  
+
+let (|Truck|_|) (x:Truck) =
+    Some(printer truckPrinter x)
+ 
+
+Car car 
+
