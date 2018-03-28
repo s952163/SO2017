@@ -59,21 +59,20 @@ let printer (printer: 'a -> IVehicle) v =
 printer carPrinter car
 printer truckPrinter truck
 
-type Wheels =
- | Truck of Truck
- | Car of Car
 
-let testPrinter x = 
+let (|Cars|_|) x =
     match x with 
-    | Truck x -> "we've got a truck"
-    | Car x -> "what's this"
-
-let (|Car|_|) (x:Car) = 
-    Some(printer carPrinter x)  
-
-let (|Truck|_|) (x:Truck) =
-    Some(printer truckPrinter x)
+    | {Car.Registration = _; Owner = _; Wheels = _; customAttribute1 = _; customAttribute2 = _} -> Some(x.Registration, x.Owner)
+    | _ -> None
  
+let (|Other|_|) x = 
+    match x with 
+    | {Truck.Registration =_ ; Owner = _; Wheels = _ ; customField5 = _; customField6 = _ } -> Some(x.Registration,x.Owner) 
+type Wheels = Car | Truck
 
-Car car 
+let getFields x  =
+    match x with
+    | Other z -> z
+ 
+getFields truck
 
