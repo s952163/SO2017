@@ -47,8 +47,9 @@ type Document = {
     Version: string
 }
 open System
-let inline requestData< ^t when ^t: (member Name :  ^t -> string) > (document: ^t when ^t: (member Name :  ^t -> string )) =
-    (^t: (member Name: string)(document))
+let inline requestData< ^x> (document) =
+    let name = (^x: (member Name: string)(document))
+    Console.WriteLine(name)
     //Console.WriteLine(document.Name)
     //Console.WriteLine(document.Version)
 
