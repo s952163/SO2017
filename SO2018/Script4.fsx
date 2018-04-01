@@ -1,3 +1,5 @@
+open System
+
 type Car = {
     Registration: string
     Owner: string
@@ -19,15 +21,18 @@ type Bike = {
     Color: string
 }
 
+
 type Vehicle = {
     Registration: string
     Owner: string
+    VehicleType: System.Type
 }
 
 let inline someComplexFun v  =
+   let t = typeof< ^v>
    let owner =  (^v: (member Owner: string)(v)) 
    let registration = (^v: (member Registration: string)(v))
-   {Registration = registration; Owner = owner}
+   {Registration = registration; Owner = owner; VehicleType = t}
 
 let car = {Car.Registration = "xyz"; Owner = "xyz"; Wheels = 3; customAttribute1= "xyz"; customAttribute2 = "xyz"}
 let truck = {Truck.Registration = "abc"; Owner = "abc"; Wheels = 12; customField5 = "abc"; customField6 = "abc"}
