@@ -36,6 +36,20 @@ someComplexFun car
 someComplexFun truck
 //someComplexFun bike
 
+
+type Document = {
+    Name: string
+    Version: string
+}
+open System
+let inline requestData< ^t when ^t: (member Name :  ^t -> string) > (document: ^t when ^t: (member Name :  ^t -> string )) =
+    (^t: (member Name: string)(document))
+    //Console.WriteLine(document.Name)
+    //Console.WriteLine(document.Version)
+
+
+
+
 type IVehicle =
     abstract Registration : string
     abstract Owner : string
