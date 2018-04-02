@@ -41,4 +41,4 @@ json // LINQPad output
 let json2 = """{"id":"e3c7373c-f4bc-4ffa-9a01-7c7d9f83e4cf","name":"test","type":"document"}"""
 let document2 = deserializeJson<MyType> json2
 document2 // LINQPad output
-//(MyType.name, MyType.``type`` , MyType.id)
+(document2.id,document2.name,document2.``type``)
