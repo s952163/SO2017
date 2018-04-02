@@ -42,17 +42,33 @@ someComplexFun truck
 //someComplexFun bike
 
 
+
+open System
+
 type Document = {
     Name: string
     Version: string
 }
-open System
-let inline requestData< ^x> (document) =
-    let name = (^x: (member Name: string)(document))
-    Console.WriteLine(name)
-    //Console.WriteLine(document.Name)
-    //Console.WriteLine(document.Version)
 
+type OtherDoc = {
+    Name: string
+    Version: string
+}
+
+let inline requestData< ^a when ^a : (member Name : string)  > x =
+    Console.WriteLine(^a: (member Name: string)(x))
+
+let doc1 = {Document.Name = "Joe"; Version = "123"}
+let doc2 = {OtherDoc.Name = "Jim"; Version = "456"}
+
+
+requestData doc2
+requestData doc1
+
+requestData<Document> doc1
+requestData<OtherDoc> doc2
+
+requestData<Document> doc2
 
 
 
