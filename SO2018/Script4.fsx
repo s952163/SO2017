@@ -55,8 +55,13 @@ type OtherDoc = {
     Version: string
 }
 
-let inline requestData< ^a when ^a : (member Name : string)  > x =
+// let inline requestData< ^a when ^a : (member Name : string)  > x =
+//     Console.WriteLine(^a: (member Name: string)(x))
+
+
+let inline requestData< ^a when ^a : (member Name : string) and ^a : (member Version : string) > x =
     Console.WriteLine(^a: (member Name: string)(x))
+    Console.WriteLine(^a: (member Version: string)(x))
 
 let doc1 = {Document.Name = "Joe"; Version = "123"}
 let doc2 = {OtherDoc.Name = "Jim"; Version = "456"}
