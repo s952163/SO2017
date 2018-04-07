@@ -14,3 +14,14 @@ type Pieces =
     | Capturables of CapturablePieces
     | King
 
+let z = Capturables Pawn
+
+let (Capturables xx ) = z
+
+let x1 = 
+    async {
+        let y = 2
+        let z = 3
+        let x = async { return (y + z) } 
+        return! x
+    } |> Async.RunSynchronously
