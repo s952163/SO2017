@@ -31,6 +31,9 @@ let xml = """
 </Root>
 """
 
+
+
+type Contributor = string
 [<CLIMutable>]
 type Edition = {
     [<XmlAttribute("available")>] Available : bool
