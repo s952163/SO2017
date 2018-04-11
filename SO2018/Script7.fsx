@@ -16,3 +16,16 @@ xs
                           if x > 10 then (x , x)
                           elif y >= 10 then (y , y)
                           else (x,y) )
+
+
+let xs = [(1,2);(3,4)]
+let v = List.map (fun x -> List.replicate 2 x) xs |> List.concat
+
+xs
+|> List.collect (fun x -> List.replicate 2 x)
+
+
+
+let rep2 x = List.replicate 2 x
+
+xs |> (List.replicate 2 >> List.concat)
