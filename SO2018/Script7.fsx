@@ -29,3 +29,11 @@ xs
 let rep2 x = List.replicate 2 x
 
 xs |> (List.replicate 2 >> List.concat)
+
+let countUp =
+    let mutable count = 0
+    (fun () -> count <- count + 1
+               count)
+
+countUp()
+
