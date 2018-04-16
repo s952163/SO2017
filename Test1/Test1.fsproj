@@ -6,6 +6,11 @@
     <DebugType>portable</DebugType>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
+    <ItemGroup>
+    <ProjectReference Include="Test1.fsproj">
+      <Name>Test1.fsproj</Name>
+    </ProjectReference>
+    </ItemGroup>
   <ItemGroup>
     <Compile Include="Test1.fs" />
     <None Include="App.config" />
