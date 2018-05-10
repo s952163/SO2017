@@ -50,3 +50,8 @@ List.zip xs.[0] xs.[1]
         let x1 = i.[j]
         let x2 = i.[j]
         yield (x1,x2)]
+
+
+type AddString = string -> string -> string
+
+let myFunc (x:string) (y:string) :int = failwith "oops"
